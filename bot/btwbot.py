@@ -43,7 +43,7 @@ async def on_message(message):
 		g = Github(os.getenv("GITHUB_TOKEN"))
 		repo = g.get_repo(os.getenv("GITHUB_REPO"))
 		#grab contents from repo
-		getStickyMessageGitHub = repo.get_contents("bot/PvPChallengesStickyMessageID.txt")
+		getStickyMessageGitHub = repo.get_contents("bot/files/PvPChallengesStickyMessageID.txt")
 		#grab full content from file
 		decodedStickyMessageGitHub = getStickyMessageGitHub.decoded_content.decode()
 		#define vars
@@ -72,7 +72,7 @@ async def on_message(message):
 		#transform list to string
 		stickyMessageIDsStr = "".join(stickyMessageIDs)
 		#update files in repo
-		repo.update_file("bot/PvPChallengesStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
+		repo.update_file("bot/files/PvPChallengesStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
 	
 	
 	
