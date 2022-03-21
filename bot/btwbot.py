@@ -56,11 +56,14 @@ async def on_message(message):
 		#>>>>>>>>>>Delete old message and post new message
 		#delete previous message, otherwise alert that there is no alert to delete
 		for x in stickyMessageIDs:
+			await int(x).delete()
+			'''
 			try:
 				print(x)
 				await int(x).delete()
 			except:
 				print('nothing to delete')
+			'''
 		#post new message at bottom of PvP Challenges channel
 		embedVar = discord.Embed(title="Current Active Challenges:", description="**__01. It Takes Two__** *[Difficulty: Hard]*\nTo complete this challenge, you must win a battle against your opponent using 2 Pokemon (CP can be any range as long as it is eligible in the cup). The third Pokemon can be any Pokemon eligible in the cup, however it must be at 10 CP. The 10 CP Pokemon is allowed to be used in battle as well.\n\n**__02. Get Beamed__** *[Difficulty: Easy]*\nTo complete this challenge, you must successfully land a Solar Beam or Hyper Beam against an opponent and knock out the Pokemon.\n\n**__03. Overpowered__** *[Difficulty: Medium]*\nTo complete this challenge, you must win a battle against your opponent. However, all 3 Pokemon on your team must be alive (as long as it is above 0 HP) and both shields are still available (meaning unused).\n\n**__04. Community Battler__** *[Difficulty: Easy]*\nDuring community day, you must win a battle against an opponent using the Pokemon featured & its event move during the Pokemon GO Community Day.\n\n**__05. Student to Master__** *[Difficulty: Depends on Staff]*\nDefeat in a battle any BTW staff during a stream or competition.", color=0x00FF00)
 		stickyMessage1 = await bot.pvpChallengesChannel.send(embed=embedVar)
