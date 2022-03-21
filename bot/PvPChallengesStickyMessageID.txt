@@ -1,1 +1,1 @@
-<Message id=955358578439520257 channel=<TextChannel id=948750848350126080 name='pvp-challenges' position=37 nsfw=False news=False category_id=811309296084058183> type=<MessageType.default: 0> author=<Member id=954100743428771840 name="Seagull's Assistant - BTW" discriminator='5380' bot=True nick=None guild=<Guild id=811301587997687868 name='B.T.W PvP Podcast' shard_id=0 chunked=True member_count=145>> flags=<MessageFlags value=0>>
+
