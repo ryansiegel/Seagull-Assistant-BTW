@@ -57,7 +57,8 @@ async def on_message(message):
 		#delete previous message, otherwise alert that there is no alert to delete
 		for x in stickyMessageIDs:
 			try:
-				await int(messageID).delete()
+				print(x)
+				await int(x).delete()
 			except:
 				print('nothing to delete')
 		#post new message at bottom of PvP Challenges channel
