@@ -1,1 +1,1 @@
-worker: python bot/forthembot.py
+worker: python bot/btwbot.py
