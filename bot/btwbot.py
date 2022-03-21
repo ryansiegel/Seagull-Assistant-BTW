@@ -27,7 +27,6 @@ BOT START UP
 async def on_ready():
 	#grab channels
 	await grabChannelID()
-	await bot.staffChannel.send('Hey there fuckers. It\'s me, your bot. I am online and ready to fuck shit up!')
 
 @bot.event
 async def on_message(message):
