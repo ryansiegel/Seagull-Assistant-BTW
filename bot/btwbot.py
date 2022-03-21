@@ -56,7 +56,7 @@ async def on_message(message):
 		#>>>>>>>>>>Delete old message and post new message
 		#delete previous message, otherwise alert that there is no alert to delete
 		for x in stickyMessageIDs:
-			await int(x).delete()
+			await x.delete()
 			'''
 			try:
 				print(x)
