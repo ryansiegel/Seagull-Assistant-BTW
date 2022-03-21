@@ -65,7 +65,7 @@ async def on_message(message):
 		stickyMessage1 = await bot.pvpChallengesChannel.send(embed=embedVar)
 		#>>>>>>>>>>Save new message ID
 		stickyMessageIDs, stickyMessageIDsStr = [], ""
-		stickyMessageIDs.append(str(stickyMessage1).lstrip())
+		stickyMessageIDs.append(str(stickyMessage1.id).lstrip())
 		#add \n to each item in list to put each item on new line in file
 		stickyMessageIDs = [item + "\n" for item in stickyMessageIDs]
 		#transform list to string
