@@ -14,20 +14,13 @@ CHANNEL ACCESS LIST
 #save IDs of channels
 bot.staffChannel, bot.pvpChallengesChannel = 0,0
 
-'''
-STICKY MESSAGE
-'''
-#save current sticky message to string to delete when new message is posted
-bot.stickyMessagePvPChallenges = ""
-
-'''
-BOT START UP
-'''
+#Bot Start Up
 @bot.event
 async def on_ready():
 	#grab channels
 	await grabChannelID()
 
+#On Message Send
 @bot.event
 async def on_message(message):
 	if bot.get_channel(int(message.channel.id)) == bot.pvpChallengesChannel:
