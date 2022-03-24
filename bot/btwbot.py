@@ -106,6 +106,46 @@ async def on_message(message):
 		stickyMessageIDsStr = "".join(stickyMessageIDs)
 		#update files in repo
 		repo.update_file("bot/files/SilphCupStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
+	elif bot.get_channel(int(message.channel.id)) == bot.currentSilphPracticeTournamentChannel:
+		'''
+		STICKY MESSAGE FOR CURRENT SILPH TOURNAMENT - creates a 'pinned' message at the bottom of the current silph channel. Basically deletes the old message (Saved to bot.stickymessage) and
+				posts a new one whenever anyone comments.
+		'''
+		#>>>>>>>>>>Collect current message ID
+		#connect to repo
+		g = Github(os.getenv("GITHUB_TOKEN"))
+		repo = g.get_repo(os.getenv("GITHUB_REPO"))
+		#grab contents from repo
+		getStickyMessageGitHub = repo.get_contents("bot/files/PracticeSilphCupStickyMessageID.txt")
+		#grab full content from file
+		decodedStickyMessageGitHub = getStickyMessageGitHub.decoded_content.decode()
+		#define vars
+		stickyMessageIDs = []
+		#put contents in list
+		stickyMessageIDs = decodedStickyMessageGitHub.split("\n")
+		#remove empty space at beginning of each string in list
+		stickyMessageIDs = [item.lstrip() for item in stickyMessageIDs]
+		stickyMessageIDs = list(filter(None, stickyMessageIDs))
+		#>>>>>>>>>>Delete old message and post new message
+		#delete previous message, otherwise alert that there is no alert to delete
+		for x in stickyMessageIDs:
+			try:
+				messageObject = await bot.currentSilphPracticeTournamentChannel.fetch_message(int(x))
+				await messageObject.delete()
+			except:
+				print('nothing to delete')
+		embedVar = discord.Embed(title="Practice Nemesis Cup", description="", color=0xd45f19)
+		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** Nemesis Cup\n**Link:** https://silph.gg/t/dny3/ \n**Start Time:** Mar 27th at 7pm Eastern \n**Round Time Limit:** 24hr / 1 day rounds", inline=False)
+		stickyMessage1 = await bot.currentSilphPracticeTournamentChannel.send(embed=embedVar)
+		#>>>>>>>>>>Save new message ID
+		stickyMessageIDs, stickyMessageIDsStr = [], ""
+		stickyMessageIDs.append(str(stickyMessage1.id).lstrip())
+		#add \n to each item in list to put each item on new line in file
+		stickyMessageIDs = [item + "\n" for item in stickyMessageIDs]
+		#transform list to string
+		stickyMessageIDsStr = "".join(stickyMessageIDs)
+		#update files in repo
+		repo.update_file("bot/files/PracticeSilphCupStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
 				
 '''
 CHANNEL ACCESS LIST - grab channel IDs from Heroku env list and assign it to vars
