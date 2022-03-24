@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix='!', description="This is a Helper Bot", inten
 CHANNEL ACCESS LIST
 '''
 #save IDs of channels
-bot.staffChannel, bot.pvpChallengesChannel, bot.currentSilphTournamentChannel = 0,0,0
+bot.staffChannel, bot.pvpChallengesChannel, bot.currentSilphTournamentChannel, bot.currentSilphPracticeTournamentChannel = 0,0,0,0
 
 #Bot Start Up
 @bot.event
@@ -154,6 +154,7 @@ async def grabChannelID():
 	bot.staffChannel = bot.get_channel(int(os.getenv("STAFF_CHANNEL_ID")))
 	bot.pvpChallengesChannel = bot.get_channel(int(os.getenv("PVP_CHALLENGES_CHANNEL_ID")))
 	bot.currentSilphTournamentChannel = bot.get_channel(int(os.getenv("CURRENT_SILPH_TOURNAMENT_CHANNEL_ID")))
+	bot.currentSilphPracticeTournamentChannel = bot.get_channel(int(os.getenv("CURRENT_PRACTICE_SILPH_TOURNAMENT_CHANNEL_ID")))
   
   
 #token to run bot
