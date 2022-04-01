@@ -32,7 +32,7 @@ async def on_message(message):
 	emoji4 = discord.utils.get(message.guild.emojis, name="seagulllll")
 	emoji5 = discord.utils.get(message.guild.emojis, name="seagullllll")
 	emojiList = [emoji1, emoji2, emoji3, emoji4, emoji5]
-        randomEmoji = random.choice(emojiList)
+	randomEmoji = random.choice(emojiList)
 	await message.add_reaction(randomEmoji)
 	if bot.get_channel(int(message.channel.id)) == bot.pvpChallengesChannel:
 		'''
