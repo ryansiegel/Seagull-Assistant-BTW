@@ -108,7 +108,6 @@ async def on_message(message):
 		stickyMessageIDsStr = "".join(stickyMessageIDs)
 		#update files in repo
 		repo.update_file("bot/files/SilphCupStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
-	'''
 	elif bot.get_channel(int(message.channel.id)) == bot.currentSilphPracticeTournamentChannel:
 		#>>>>>>>>>>Collect current message ID
 		#connect to repo
@@ -133,8 +132,8 @@ async def on_message(message):
 				await messageObject.delete()
 			except:
 				print('nothing to delete')
-		embedVar = discord.Embed(title="Practice Nemesis Cup", description="", color=0xd45f19)
-		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** Nemesis Cup\n**Link:** https://silph.gg/t/dny3/ \n**Start Time:** Mar 27th at 7pm Eastern \n**Round Time Limit:** 24hr / 1 day rounds", inline=False)
+		embedVar = discord.Embed(title="B.T.W. Presents.... TBA", description="", color=0x367900)
+		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** TBA Cup\n**Link:** TBA \n**Check In Code:** TBA\n**Start Time:** Apr 22nd at 7pm Eastern\n**Round Time Limit:** 48hr / 2 day rounds", inline=False)
 		stickyMessage1 = await bot.currentSilphPracticeTournamentChannel.send(embed=embedVar)
 		#>>>>>>>>>>Save new message ID
 		stickyMessageIDs, stickyMessageIDsStr = [], ""
@@ -144,8 +143,7 @@ async def on_message(message):
 		#transform list to string
 		stickyMessageIDsStr = "".join(stickyMessageIDs)
 		#update files in repo
-		repo.update_file("bot/files/PracticeSilphCupStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
-	'''		
+		repo.update_file("bot/files/PracticeSilphCupStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)		
 '''
 CHANNEL ACCESS LIST - grab channel IDs from Heroku env list and assign it to vars
 '''
