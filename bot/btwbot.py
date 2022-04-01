@@ -1,4 +1,4 @@
-import discord,asyncio,os,requests,string
+import discord,asyncio,os,requests,string,random
 from datetime import datetime, timedelta, date
 from discord.ext import commands, tasks
 from discord.ui import Button, View
@@ -27,7 +27,13 @@ async def on_message(message):
 	if message.author == bot.user:
 		return
 	emoji1 = discord.utils.get(message.guild.emojis, name="seagullllllll")
-	await message.add_reaction(emoji1)
+	emoji2 = discord.utils.get(message.guild.emojis, name="seagulll")
+	emoji3 = discord.utils.get(message.guild.emojis, name="seagullll")
+	emoji4 = discord.utils.get(message.guild.emojis, name="seagulllll")
+	emoji5 = discord.utils.get(message.guild.emojis, name="seagullllll")
+	emojiList = [emoji1, emoji2, emoji3, emoji4, emoji5]
+        randomEmoji = random.choice(emojiList)
+	await message.add_reaction(randomEmoji)
 	if bot.get_channel(int(message.channel.id)) == bot.pvpChallengesChannel:
 		'''
 		STICKY MESSAGE FOR PVP CHALLENGES - creates a 'pinned' message at the bottom of the pvp challenges channel. Basically deletes the old message (Saved to bot.stickymessage) and
