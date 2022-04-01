@@ -97,7 +97,7 @@ async def on_message(message):
 			except:
 				print('nothing to delete')
 		embedVar = discord.Embed(title="B.T.W. Presents.... Nemesis Cup", description="", color=0xd45f19)
-		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** Nemesis Cup\n**Link:** https://silph.gg/t/wumm/ \n**Check In Code:** 0000\n**Start Time:** Apr 8th at 7pm Eastern\n**Round Time Limit:** 48hr / 2 day rounds", inline=False)
+		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** Nemesis Cup\n**Link:** https://silph.gg/t/wumm/ \n**Check In Code:** 4303\n**Start Time:** Apr 8th at 7pm Eastern\n**Round Time Limit:** 48hr / 2 day rounds", inline=False)
 		stickyMessage1 = await bot.currentSilphTournamentChannel.send(embed=embedVar)
 		#>>>>>>>>>>Save new message ID
 		stickyMessageIDs, stickyMessageIDsStr = [], ""
