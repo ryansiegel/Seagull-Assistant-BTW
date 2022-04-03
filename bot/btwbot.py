@@ -67,7 +67,7 @@ async def on_message(message):
 		#post new message at bottom of PvP Challenges channel
 		embedVar = discord.Embed(title="Current Active Challenges:", description="", color=0x00FF00)
 		embedVar.add_field(name="March Challenges",value="[CLICK HERE TO VIEW LIST](https://discord.com/channels/811301587997687868/948750848350126080/951317452439035945)", inline=False)
-		embedVar.add_field(name="April Challenges",value="Coming April 1st", inline=False)
+		embedVar.add_field(name="April Challenges",value="[CLICK HERE TO VIEW LIST](https://discord.com/channels/811301587997687868/948750848350126080/960289344239833108)", inline=False)
 		stickyMessage1 = await bot.pvpChallengesChannel.send(embed=embedVar)
 		#>>>>>>>>>>Save new message ID
 		stickyMessageIDs, stickyMessageIDsStr = [], ""
