@@ -142,8 +142,8 @@ async def on_message(message):
 				await messageObject.delete()
 			except:
 				print('nothing to delete')
-		embedVar = discord.Embed(title="B.T.W. Presents.... TBA", description="", color=0x367900)
-		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** TBA Cup\n**Link:** TBA \n**Check In Code:** TBA\n**Start Time:** Apr 22nd at 7pm Eastern\n**Round Time Limit:** 48hr / 2 day rounds", inline=False)
+		embedVar = discord.Embed(title="B.T.W. Presents.... THE ARBORETUM CUP", description="", color=0x367900)
+		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** Arboretum Cup\n**Link:** https://silph.gg/t/df4z/ \n**Check In Code:** 7156\n**Start Time:** Apr 22nd at 7pm Eastern\n**Round Time Limit:** 48hr / 2 day rounds", inline=False)
 		stickyMessage1 = await bot.currentSilphPracticeTournamentChannel.send(embed=embedVar)
 		#>>>>>>>>>>Save new message ID
 		stickyMessageIDs, stickyMessageIDsStr = [], ""
