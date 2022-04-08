@@ -78,6 +78,7 @@ async def on_message(message):
 		stickyMessageIDsStr = "".join(stickyMessageIDs)
 		#update files in repo
 		repo.update_file("bot/files/PvPChallengesStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
+	'''
 	elif bot.get_channel(int(message.channel.id)) == bot.currentSilphTournamentChannel:
 		'''
 		STICKY MESSAGE FOR CURRENT SILPH TOURNAMENT - creates a 'pinned' message at the bottom of the current silph channel. Basically deletes the old message (Saved to bot.stickymessage) and
@@ -118,6 +119,7 @@ async def on_message(message):
 		stickyMessageIDsStr = "".join(stickyMessageIDs)
 		#update files in repo
 		repo.update_file("bot/files/SilphCupStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
+	'''
 	elif bot.get_channel(int(message.channel.id)) == bot.currentSilphPracticeTournamentChannel:
 		#>>>>>>>>>>Collect current message ID
 		#connect to repo
