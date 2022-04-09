@@ -20,6 +20,11 @@ async def on_ready():
 	#grab channels
 	await grabChannelID()
 
+@bot.event
+async def on_member_join(member, stickyMessage=bot.stickyMessage):
+	role = discord.utils.get(member.guild.roles, name="Temporary Membership")
+	await member.add_roles(role)
+	
 #On Message Send
 @bot.event
 async def on_message(message):
