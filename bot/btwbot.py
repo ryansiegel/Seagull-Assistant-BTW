@@ -85,7 +85,6 @@ async def on_message(message):
 		'''
 		#>>>>>>>>>>Collect current message ID
 		#connect to repo
-		'''
 		g = Github(os.getenv("GITHUB_TOKEN"))
 		repo = g.get_repo(os.getenv("GITHUB_REPO"))
 		#grab contents from repo
@@ -107,8 +106,8 @@ async def on_message(message):
 				await messageObject.delete()
 			except:
 				print('nothing to delete')
-		embedVar = discord.Embed(title="B.T.W. Presents.... Nemesis Cup", description="", color=0xd45f19)
-		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** Nemesis Cup\n**Link:** https://silph.gg/t/wumm/ \n**Check In Code:** 4303\n**Start Time:** Apr 8th at 7pm Eastern\n**Round Time Limit:** 48hr / 2 day rounds", inline=False)
+		embedVar = discord.Embed(title="B.T.W. Presents... TBA", description="", color=0x000000)
+		embedVar.add_field(name="》TOURNAMENT INFORMATION",value="**Format:** TBA\n**Link:** TBA \n**Check In Code:** TBA\n**Start Time:** May 13th at 7pm Eastern\n**Round Time Limit:** 48hr / 2 day rounds", inline=False)
 		stickyMessage1 = await bot.currentSilphTournamentChannel.send(embed=embedVar)
 		#>>>>>>>>>>Save new message ID
 		stickyMessageIDs, stickyMessageIDsStr = [], ""
@@ -119,7 +118,6 @@ async def on_message(message):
 		stickyMessageIDsStr = "".join(stickyMessageIDs)
 		#update files in repo
 		repo.update_file("bot/files/SilphCupStickyMessageID.txt", "Updated", stickyMessageIDsStr, getStickyMessageGitHub.sha)
-		'''
 	elif bot.get_channel(int(message.channel.id)) == bot.currentSilphPracticeTournamentChannel:
 		#>>>>>>>>>>Collect current message ID
 		#connect to repo
